@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+        <title>{{ title }} </title>
+    {% else %}
+        <title> tommy site</title>
+    {% endif %}
+</head>
+<body>
+    <div> category :<a href="/index">index</a> | <a href="/memo">memo</a> | <a href="/user">user</a> |<a href="/testform">testform</a> </div>
+
+    <hr>
+    {% block content %}
+    {% endblock %}
+    <hr>
+    <div> this is tail </div>
+
+</body>
+</html>

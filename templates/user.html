@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <table>
+        {% for user in users %}
+            <tr valign="top">
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <p><a href="{{ url_for('add') }}">Add User</a></p>
+{% endblock %}
