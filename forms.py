@@ -10,7 +10,7 @@ class AddUserForm(Form):
 
 
 class AddMemoForm(Form):
-    username=StringField('username',[validators.Length(min=0,max=100)])
+    #username=StringField('username',[validators.Length(min=0,max=100)])
     event=TextAreaField('event',[validators.Length(min=0,max=300)])
     create_time=datetime.utcnow()
     update_time=datetime.utcnow()

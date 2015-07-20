@@ -1,10 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
     this is memo page<br>
-
-    {% for event in events %}
-        {{ event.id, event.username, event.event, event.update_time, event.create_time }} <br>
+    <table border="1">
+    <tr>
+        <th>id</th>
+        <th>event</th>
+        <th>update_time</th>
+        <th>create_time</th>
+    </tr>
+        {% for event in events %}
+    <tr>
+        <td>{{ event.id }}</td>
+        <td>{{ event.event }}</td>
+        <td>{{ event.update_time }}</td>
+        <td>{{ event.create_time }}</td>
+    </tr>
     {% endfor %}
+    </table>
+<br>
+
     <p><a href="{{ url_for('addmemo') }}">Add Memo</a></p>
 
 {% endblock %}

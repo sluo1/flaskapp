@@ -2,7 +2,7 @@ __author__ = 'tommy'
 from __init__ import db
 
 class User(db.Model):
-    #__tablename__ = 'users'
+    __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True)
     email = db.Column(db.String(320))
@@ -14,12 +14,12 @@ class User(db.Model):
 
 
 class Memo(db.Model):
-    #__tablename__= 'memo'
+    __tablename__= 'memo'
     id = db.Column(db.Integer,primary_key=True)
     event=db.Column(db.String(200))
     update_time=db.Column(db.DateTime)
     create_time=db.Column(db.DateTime)
-    username=db.Column(db.String(80),db.ForeignKey('user.username'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
         return '<Memo %r>' %(self.event)

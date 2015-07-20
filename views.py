@@ -4,8 +4,7 @@ from flask import render_template,flash,redirect,session,url_for,request,g
 import models
 from forms import AddUserForm,AddMemoForm
 from models import User,Memo
-from datetime import datetime
-
+import datetime
 
 @app.route('/')
 @app.route('/index')
@@ -37,13 +36,16 @@ def adduser():
 
 @app.route('/addmemo',methods=['GET','POST'])
 def addmemo():
+    u=models.User.query.first()
     form=AddMemoForm(request.form)
     if request.method=='POST':
-
-        m=Memo(username=models.User.query.first(),event=form.event.data,create_time=datetime.utcnow(),update_time=datetime.utcnow())
+        print "2 in if post"
+        m=Memo(event=form.event.data,create_time=datetime.datetime.utcnow(),update_time=datetime.datetime.utcnow(),author=u)
+        print m
         db.session.add(m)
         db.session.commit()
         flash("your memo have been saved")
+        print '3 save '
         return redirect(url_for('memo'))
     return render_template('addmemo.html',form=form)
 

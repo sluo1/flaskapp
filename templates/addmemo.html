@@ -1,8 +1,7 @@
 {% from "_formhelpers.html" import render_field %}
-<form method="post" action="/adduser">
+<form method="post" action="/addmemo">
   <dl>
     {{ render_field(form.event) }}
-    {{ render_field(form.username) }}
   </dl>
   <p><input type="submit" value="add">
 </form>
