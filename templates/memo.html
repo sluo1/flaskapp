@@ -4,16 +4,18 @@
     <table border="1">
     <tr>
         <th>id</th>
-        <th>event</th>
-        <th>update_time</th>
-        <th>create_time</th>
+        <th>待办事项</th>
+        <th>办事日期</th>
+        <th>创建日期</th>
+        <th>登记人</th>
     </tr>
         {% for event in events %}
     <tr>
         <td>{{ event.id }}</td>
         <td>{{ event.event }}</td>
-        <td>{{ event.update_time }}</td>
+        <td>{{ event.doevent_day }}</td>
         <td>{{ event.create_time }}</td>
+        <td>{{ event.user_name }}</td>
     </tr>
     {% endfor %}
     </table>

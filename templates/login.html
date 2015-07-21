@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+this is login page
+    <form action="" method="post">
+        name:<input name="name" type="text" value="username" onClick="if (this.value=='username'){this.value=''}">
+        password:<input name="password" type="password" value="password" onClick="if (this.value=='password'){this.value=''}">
+        <button type="submit">提交</button>
+    </form>
+    {% with messages=get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+{% endblock %}

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/flaskapp.iml" filepath="$PROJECT_DIR$/.idea/flaskapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/untitled.iml" filepath="$PROJECT_DIR$/.idea/untitled.iml" />
+      <module fileurl="file://$USER_HOME$/python3project/zamptest/.idea/zamptest.iml" filepath="$USER_HOME$/python3project/zamptest/.idea/zamptest.iml" />
     </modules>
   </component>
 </project>
